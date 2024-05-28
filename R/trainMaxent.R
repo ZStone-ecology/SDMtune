@@ -5,7 +5,7 @@ trainMaxent <- function(data,
 
   extra_args <- c("removeduplicates=false", "addsamplestobackground=false")
   result <- SDMmodel(data = data)
-  folder <- tempfile()
+  folder <- gsub("\\", "/", tempfile(), fixed = TRUE)
 
   args <- .make_args(reg = reg,
                      fc = fc,
